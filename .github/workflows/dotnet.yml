@@ -19,9 +19,7 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Test
-      run: dotnet test -c Release QualityManagement.Tests/QualityManagement.Tests.csproj
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build /p:Configuration=Release /t:Rebuild QualityManagement.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test -c Release --no-build QualityManagement.Tests/QualityManagement.Tests.csproj
