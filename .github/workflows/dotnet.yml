@@ -20,6 +20,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build /p:Configuration=Release /t:Rebuild QualityManagement.sln
+      run: dotnet build /p:Configuration=Release /t:Rebuild QualityManagment.sln
     - name: Test
       run: dotnet test -c Release --no-build QualityManagement.Tests/QualityManagement.Tests.csproj
